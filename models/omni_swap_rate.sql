@@ -1,0 +1,1 @@
+select * from TWHAMAN.LOOKER.SWAP_RATE

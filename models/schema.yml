@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: omni_swap_rate
+    config:
+      contract:
+        enforced: true
+    constraints:
+      - type: primary_key
+        columns: [END_MONTH]
+    columns:
+      - name: END_MONTH
+        data_type: varchar
+      - name: SWAP_RATE
+        data_type: varchar
