@@ -17,4 +17,3 @@ clean-targets: ["target", "dbt_modules"]
 models:
   twh_aman_dbt:
     +materialized: view
-    +schema: TWH_DBT
