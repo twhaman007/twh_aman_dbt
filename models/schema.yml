@@ -3,6 +3,7 @@ version: 2
 models:
   - name: omni_swap_rate
     config:
+      materialized: table
       contract:
         enforced: true
     constraints:
@@ -11,5 +12,8 @@ models:
     columns:
       - name: END_MONTH
         data_type: varchar
+        tests:
+          - unique
+          - not_null
       - name: SWAP_RATE
         data_type: varchar
