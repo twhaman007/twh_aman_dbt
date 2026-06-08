@@ -3,3 +3,6 @@ dbt_modules/
 .env
 profiles.yml
 __pycache__/
+logs/
+dbt_packages/
+
