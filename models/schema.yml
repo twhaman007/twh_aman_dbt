@@ -32,5 +32,4 @@ models:
           - unique
           - not_null
       - name: SWAP_RATE
-        description: "{{ doc('col_swap_rate') }}"
         data_type: varchar
