@@ -1,1 +1,1 @@
-select * from TWHAMAN.LOOKER.SWAP_RATE
+select * from {{ ref('stg_swap_rate') }}

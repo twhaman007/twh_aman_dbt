@@ -1,8 +1,22 @@
 version: 2
 
 models:
+  - name: stg_swap_rate
+    description: "Upstream staging table for swap rates."
+    config:
+      materialized: table
+      contract:
+        enforced: true
+    columns:
+      - name: END_MONTH
+        description: "{{ doc('col_end_month') }}"
+        data_type: varchar
+      - name: SWAP_RATE
+        description: "{{ doc('col_swap_rate') }}"
+        data_type: varchar
+
   - name: omni_swap_rate
-    description: "Snowflake table containing swap rate metrics by month."
+    description: "Downstream reporting table for swap rates."
     config:
       materialized: table
       contract:
@@ -12,11 +26,11 @@ models:
         columns: [END_MONTH]
     columns:
       - name: END_MONTH
-        description: "The ending month of the swap rate transaction."
+        description: "{{ doc('col_end_month') }}"
         data_type: varchar
         tests:
           - unique
           - not_null
       - name: SWAP_RATE
-        description: "The percentage swap rate value."
+        description: "{{ doc('col_swap_rate') }}"
         data_type: varchar
