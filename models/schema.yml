@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: country_look
+    config:
+      contract:
+        enforced: true
+    constraints:
+      - type: primary_key
+        columns: [COUNTRY]
+    columns:
+      - name: COUNTRY
+        data_type: varchar
+
+  - name: swap_rate
+    config:
+      contract:
+        enforced: true
+    constraints:
+      - type: primary_key
+        columns: [END_MONTH]
+    columns:
+      - name: END_MONTH
+        data_type: varchar
+      - name: SWAP_RATE
+        data_type: varchar
+
+  - name: total_claim_rate
+    config:
+      contract:
+        enforced: true
+    constraints:
+      - type: primary_key
+        columns: [END_MONTH]
+      - type: foreign_key
+        columns: [END_MONTH]
+        expression: TWHAMAN.TWH_DBT.swap_rate (END_MONTH)
+    columns:
+      - name: END_MONTH
+        data_type: varchar
+      - name: TOTAL_PROSPECTS
+        data_type: varchar
+      - name: TOTAL_CUSTOMER_CLAIM_RATE
+        data_type: varchar
