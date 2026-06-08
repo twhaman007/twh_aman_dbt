@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A simple example model for Snowflake"
+    columns:
+      - name: id
+        description: "Primary key"
+      - name: greeting
+        description: "Example text field"
