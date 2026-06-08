@@ -2,6 +2,7 @@ version: 2
 
 models:
   - name: omni_swap_rate
+    description: "Snowflake table containing swap rate metrics by month."
     config:
       materialized: table
       contract:
@@ -11,9 +12,11 @@ models:
         columns: [END_MONTH]
     columns:
       - name: END_MONTH
+        description: "The ending month of the swap rate transaction."
         data_type: varchar
         tests:
           - unique
           - not_null
       - name: SWAP_RATE
+        description: "The percentage swap rate value."
         data_type: varchar
